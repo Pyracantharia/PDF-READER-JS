@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liseur pdf</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!--   L'objectif du site est de lire un fichier pdf-->
+
+    <h1>Visionner le cour</h1>
+
+    <div>
+        <h2>LIRE LE FICHIER PDF</h2>
+        <button id="btn">Lire le fichier</button>
+        <button id="btn_close">Fermer le fichier</button>
+      
+
+    </div>
+
+        
+    <script>
+   // quand on click sur le bouton lire le fichier, on pourra
+   // lire le fichier pdf sur la meme page
+   // on va utiliser l'element embed pour afficher le fichier pdf
+  
+
+
+    const btn = document.getElementById('btn');
+        btn.addEventListener('click', () => {
+         
+            const div = document.createElement('div');
+            div.innerHTML = `<embed src="pdf/HELLO WOLRD.pdf" type="application/pdf" width="800" height="800">`;
+
+            document.body.appendChild(div);
+
+            const btn_close = document.getElementById('btn_close');
+            btn_close.addEventListener('click', () => {
+                document.body.removeChild(div);
+                
+            });
+        });
+    
+
+
+        
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+</body>
+</html>
